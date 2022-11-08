@@ -8,10 +8,10 @@ const EditorHeader: FC<EditorHeaderProps> = ({
 }) => (
   <PageHeader title={title} double>
     <PageHeader.Right>
-      {goBackPath !== undefined && <Button href={goBackPath}>Назад</Button>}
-      {(goBackPath === undefined && goBackFunction !== undefined) && <Button onClick={goBackFunction}>Назад</Button>}
+      {goBackPath !== undefined && <Button href={goBackPath}>Back</Button>}
+      {(goBackPath === undefined && goBackFunction !== undefined) && <Button onClick={goBackFunction}>Back</Button>}
       {(onSave !== undefined || needsSave !== undefined) && (
-        <Button blinking={needsSave} disabled={!needsSave} onClick={onSave}>Сохранить</Button>
+        <Button blinking={needsSave} disabled={!needsSave} onClick={onSave}>Save</Button>
       )}
       {additionalRightContent}
     </PageHeader.Right>

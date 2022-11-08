@@ -65,7 +65,7 @@ const Filtration: FC<FiltrationProps> = ({
   return (
     <Popover
       placement="bottomRight"
-      title="Фильтр"
+      title="Filter"
       trigger="click"
       overlayStyle={{
         width: '300px',
@@ -120,10 +120,10 @@ const Filtration: FC<FiltrationProps> = ({
           {buttonPresets?.length && (
             <Space direction="vertical" size={8}>
               {buttonPresets.includes('search') && (
-                <Button fw onClick={onFilterSearch}>Искать</Button>
+                <Button fw onClick={onFilterSearch}>Search</Button>
               )}
               {buttonPresets.includes('reset') && (
-                <Button fw onClick={onResetFilters}>Сбросить</Button>
+                <Button fw onClick={onResetFilters}>Reset</Button>
               )}
             </Space>
           )}

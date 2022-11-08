@@ -48,16 +48,16 @@ const Table: FC<TableType> = ({
           {onRemoveSelected && (
             <Suspense fallback={null}>
               <Popconfirm
-                title="Вы уверены?"
+                title="Are you sure?"
                 trigger="click"
-                okText="Да"
-                cancelText="Назад"
+                okText="Yes"
+                cancelText="Back"
                 placement="topRight"
                 onConfirm={onRemoveSelected}
               >
                 <div>
                   <Button>
-                    Удалить выбранное
+                    Delete selected
                   </Button>
                 </div>
               </Popconfirm>

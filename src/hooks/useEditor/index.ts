@@ -74,7 +74,7 @@ const useEditor = ({
           }
         })
         .catch((e) => {
-          displayRequestError(enqueueSnackbar, e, 'Произошла ошибка при попытке получения данных');
+          displayRequestError(enqueueSnackbar, e, 'An error occurred while trying to get data');
         });
 
       if (!postLoad) {
@@ -96,10 +96,10 @@ const useEditor = ({
     data?.[title?.slug as string]
       ? (
         itemId
-          ? `Изменение ${title?.label}: ${data?.[title?.slug as string]}`
-          : `Создание ${title?.label}: ${data?.[title?.slug as string]}`
+          ? `Change ${title?.label}: ${data?.[title?.slug as string]}`
+          : `Creation ${title?.label}: ${data?.[title?.slug as string]}`
       )
-      : (itemId ? `Изменение ${title?.label}` : `Создание ${title?.label}`)
+      : (itemId ? `Change ${title?.label}` : `Creation ${title?.label}`)
   ), [data, title, itemId]);
 
   const fields = useMemo<FieldType[]>(() => (
@@ -160,7 +160,7 @@ const useEditor = ({
         })
         .catch((e) => {
           setLoading(false);
-          displayRequestError(enqueueSnackbar, e, 'Произошла ошибка при попытке сохранения');
+          displayRequestError(enqueueSnackbar, e, 'An error occurred while trying to save data');
         });
     } else if (!apiActions?.saveOne) {
       console.error('useEditor: neither apiActions.saveOne nor onSaveOne provided');

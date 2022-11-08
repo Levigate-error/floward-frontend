@@ -79,7 +79,7 @@ const useTable = ({
         }
       })
       .catch((e) => {
-        displayRequestError(enqueueSnackbar, e, 'Произошла ошибка при попытке получения данных');
+        displayRequestError(enqueueSnackbar, e, 'An error occurred while trying to get data');
       });
     setLoading(false);
     // eslint-disable-next-line
@@ -96,7 +96,7 @@ const useTable = ({
             .then();
         })
         .catch((e) => {
-          displayRequestError(enqueueSnackbar, e, 'Произошла ошибка при попытке удаления данных');
+          displayRequestError(enqueueSnackbar, e, 'An error occurred while trying to delete data');
         });
 
       setLoading(false);
@@ -141,7 +141,7 @@ const useTable = ({
         loadData().then();
       })
       .catch((e) => {
-        displayRequestError(enqueueSnackbar, e, 'Произошла ошибка при попытке сохрания данных');
+        displayRequestError(enqueueSnackbar, e, 'An error occurred while trying to save data');
       });
 
     setLoading(false);
@@ -277,31 +277,31 @@ const useTable = ({
                 })}
                 key="actions-edit"
               >
-                Редактировать
+                Edit
               </Table.Button>
             )}
             {(record.id && record.id === alteredItem?.id) ? (
               <>
                 <Table.Button key="actions-save" onClick={onSave}>
-                  Сохранить
+                  Save
                 </Table.Button>
                 <Table.Button key="actions-cancel" onClick={onCancelSave}>
-                  Отменить
+                  Cancel
                 </Table.Button>
               </>
             ) : (tableActions.presets?.remove) && (
               <Suspense fallback={null} key="actions-remove">
                 <Popconfirm
-                  title="Вы уверены?"
+                  title="Are you sure?"
                   trigger="click"
-                  okText="Да"
-                  cancelText="Назад"
+                  okText="Yes"
+                  cancelText="Back"
                   placement="topRight"
                   onConfirm={() => onRemove([record.id])}
                 >
                   <div>
                     <Table.Button styleType="danger">
-                      Удалить
+                      Delete
                     </Table.Button>
                   </div>
                 </Popconfirm>

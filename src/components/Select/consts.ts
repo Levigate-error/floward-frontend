@@ -3,12 +3,12 @@ import { SelectOption } from './types';
 const YES_NO_SELECT: SelectOption[] = [
   {
     id: 1,
-    label: 'Да',
+    label: 'Yes',
     value: 'true',
   },
   {
     id: 2,
-    label: 'Нет',
+    label: 'No',
     value: 'false',
   },
 ];
